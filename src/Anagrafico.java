@@ -74,7 +74,7 @@ public class Anagrafico{
     };
 
 
-    // modifica della cittÃ  e dell'indirizzo
+    // modifica della città e dell'indirizzo
     public void  modifica(int pos, String citta, String indirizzo){
         try{    citta= Record.normalizza(citta);
             indirizzo= Record.normalizza(indirizzo);

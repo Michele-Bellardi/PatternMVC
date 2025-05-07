@@ -1,9 +1,23 @@
-public class Test{
+import javax.swing.*;
+import java.awt.*;
 
-    public static void main(String args[]){
+public class View extends JFrame {
+    private int X = 100;
+    private int Y = 100;
+    private int HEIGHT = 600;
+    private int WIDTH = 600;
 
-        View view = new View();
-        view.setVisible(true);
+    public View() throws HeadlessException {
+        setTitle("Visualizza Archivio");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setBounds(X, Y, HEIGHT, WIDTH);
+
+        setVisible(true);
+    }
+
+
+
+    public void prelevaDaFile(){
         Anagrafico arc = new Anagrafico();
 
         arc.apriFile();
@@ -40,6 +54,5 @@ public class Test{
 
         arc.chiudiFile();
 
-    } // main
-
+    }
 }
