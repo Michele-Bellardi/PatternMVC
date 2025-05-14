@@ -1,26 +1,27 @@
-public class Record{
-
+public class Record {
     public String Matricola;
     public String Cognome;
     public String Nome;
     public String Citta;
     public String Indirizzo;
-    static int L = 100;
+    public static final int L = 100;
 
-    static public String normalizza(String s){           // aggiunge spazi alla stringa, fino a 20  caratteri
-        int i=s.length();
-        for( ; i<20; i++) s= s + " ";
+    public static String normalizza(String s) {
+        if (s == null) s = "";
+        int i = s.length();
+        for (; i < 20; i++) s = s + " ";
         return s;
     }
 
-    Record(){
+    public Record() {
         Matricola = normalizza(Matricola);
         Cognome = normalizza(Cognome);
         Nome = normalizza(Nome);
         Citta = normalizza(Citta);
-        Indirizzo = normalizza(Indirizzo);}
+        Indirizzo = normalizza(Indirizzo);
+    }
 
-    Record (String matricola, String cognome, String nome, String citta, String indirizzo){
+    public Record(String matricola, String cognome, String nome, String citta, String indirizzo) {
         Matricola = normalizza(matricola);
         Cognome = normalizza(cognome);
         Nome = normalizza(nome);
@@ -29,7 +30,26 @@ public class Record{
     }
 
     public String toString() {
-        return    Matricola + Cognome + Nome + Citta + Indirizzo;
+        return Matricola + Cognome + Nome + Citta + Indirizzo;
     }
 
+    public String getMatricola() {
+        return Matricola.trim();
+    }
+
+    public String getCognome() {
+        return Cognome.trim();
+    }
+
+    public String getNome() {
+        return Nome.trim();
+    }
+
+    public String getCitta() {
+        return Citta.trim();
+    }
+
+    public String getIndirizzo() {
+        return Indirizzo.trim();
+    }
 }
